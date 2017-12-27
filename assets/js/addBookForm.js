@@ -4,30 +4,12 @@ class AddBookForm extends Component {
 
         this.state = {
             book: {
-                name: "[ Emoji Placeholder ]",
+                name: "[ Book Placeholder ]",
                 author: null
             }
         }
     }
 
-    // <form method="post" action="#">
-    //   <div class="field half first">
-    //     <label for="name">Name</label>
-    //     <input type="text" name="name" id="name" />
-    //   </div>
-    //   <div class="field half">
-    //     <label for="email">Email</label>
-    //     <input type="text" name="email" id="email" />
-    //   </div>
-    //   <div class="field">
-    //     <label for="message">Message</label>
-    //     <textarea name="message" id="message" rows="4"></textarea>
-    //   </div>
-    //   <ul class="actions">
-    //     <li><input type="submit" value="Send Message" class="special" /></li>
-    //     <li><input type="reset" value="Reset" /></li>
-    //   </ul>
-    // </form>
     render() {
       firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
@@ -43,11 +25,18 @@ class AddBookForm extends Component {
             action: "#"}, [
             h('div', {className:"field"},[
               h('label', {for: "addBookTitle"}, "Title"),
-              h('input', {type: 'text', id:'bookTitle'}, null)]
+              h('input', {type: 'text', id:'addBookTitle'}, null)]
             ),
-            h('div', null, "author field"),
-            h('div', null, "rating field"),
-            h('div', null, "add book btn")
+            h('div', {className:"field"},[
+              h('label', {for: "addAuthor"}, "Author"),
+              h('input', {type: 'text', id:'addAuthor'}, null)]
+            ),
+            h('div', {className:"field"},[
+              h('label', {for: "addRating"}, "Rating"),
+              h('input', {type: 'text', id:'addRating'}, null)]
+            ),
+            h('a', {href:"",
+                    className: "button special"}, "add book btn")
           ])
       )
     }

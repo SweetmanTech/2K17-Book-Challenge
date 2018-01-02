@@ -361,7 +361,18 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 		<!-- Firebase -->
 		<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-		<script src="assets/firebase/config.js"></script>
+		<script>
+		// Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyAL--7NIh0K7f9Vmnwzmee2PYz7oqWcgNQ",
+			authDomain: "life-reading.firebaseapp.com",
+			databaseURL: "https://life-reading.firebaseio.com",
+			projectId: "life-reading",
+			storageBucket: "",
+			messagingSenderId: "42506285760"
+		};
+		firebase.initializeApp(config);
+		</script>
 		<!-- Firebase Auth -->
 		<script src="assets/firebase/auth.js"></script>
 		<!-- Firebase Firestore -->

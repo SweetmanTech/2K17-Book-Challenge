@@ -26,7 +26,6 @@ class AddBookForm extends Component {
       });
       firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-
         } else {
           alert("do not print form, Pat isn't signed in");
         }
